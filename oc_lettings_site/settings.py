@@ -1,9 +1,23 @@
 import os
 
 from pathlib import Path
+"""Ajouté pour le fonctionnement de Sentry sdk"""
+import sentry_sdk
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# ============= Init Sentry ============= #
+sentry_sdk.init(dsn,
+                integrations=[DjangoIntegration()],
+                max_breadcrumbs=50,
+                traces_sample_rate=1.0,
+                profiles_sample_rate=1.0,
+                debug=False,
+                )
+
+logging.debug("Lettings_site Program is starting!")
+sentry_sdk.add_breadcrumb(category="logger", message="Program is starting! ", level="info")
 
 
 # Quick-start development settings - unsuitable for production
