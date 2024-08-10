@@ -1,8 +1,16 @@
 import os
-
 from pathlib import Path
+from dotenv import load_dotenv
 """Ajouté pour le fonctionnement de Sentry sdk"""
 import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+# from sentry_sdk.integrations.excepthook import ExcepthookIntegration
+# from sentry_sdk.integrations.arq import ArqIntegration
+import logging
+
+
+load_dotenv()
+dsn = os.getenv('DSN')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
