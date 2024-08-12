@@ -13,12 +13,7 @@ build:
 python:
   install:
     - requirements: docs/requirements.txt
-    - method: pip
-      path: .
-      extra_requirements:
-        - docs
-    - method: pip
-      path: another/package
+    
 
 # Build documentation in the "docs/" directory with Sphinx
 sphinx:

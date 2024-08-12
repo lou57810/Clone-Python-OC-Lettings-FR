@@ -9,7 +9,8 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath("."))
+sys.path.insert(0, os.path.abspath("../"))
+
 project = 'Clone_Python_OC-Lettings-FR'
 copyright = '2024, Ben_Oc'
 author = 'Ben_Oc'
