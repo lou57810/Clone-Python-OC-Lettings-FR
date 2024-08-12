@@ -81,13 +81,13 @@ workflows:
             - build:
                 filters:
                     branches:
-                        only: main
+                        only: master
                 requires:
                     - pytest
                     - flake8
             - deploy-to-render:
                 filters:
                     branches:
-                        only: main
+                        only: master
                 requires:
                     - build
