@@ -52,7 +52,7 @@ jobs:
             - checkout
             - setup_remote_docker
             - run:
-                name: connection � Docker hub
+                name: connection Docker hub
                 command: echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_USER_ID" --password-stdin   # circle ci
 
             - run: 
