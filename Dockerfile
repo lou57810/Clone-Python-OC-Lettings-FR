@@ -3,9 +3,9 @@ FROM python:3.12
 
 # Maintenance dockerfile:
 # MAINTAINER lou57810 <lou57810@foo.com>	deprecated
-ENV PYTHONBUFFERED 1
+ENV PYTHONBUFFERED = 1
 # Eviter les fichiers .pyc dans les containers --> ralentissements
-ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONDONTWRITEBYTECODE = 1
 
 # Installer les d�pendances syst�me n�cessaires
 # RUN apt-get update && \
