@@ -37,7 +37,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['clone-python-oc-lettings-fr.onrender.com']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
