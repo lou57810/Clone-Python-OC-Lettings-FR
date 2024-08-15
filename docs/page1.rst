@@ -15,11 +15,11 @@ En prérequis, d'un point de vue pratique vous aurez besoin de:
 
 Fork et clone de l'application.
 -------------------------------
-Rendez-vous sur: `https://github.com/lou57810/Clone-Python-OC-Lettings-FR`
+- Rendez-vous sur: `https://github.com/lou57810/Clone-Python-OC-Lettings-FR`
 
 .. figure:: /images/fork-clone.png
    alt: github header
-   scale: 40%
+   scale: 20%
 
    *Fork du projet pour créer un projet identique sur votre compte GitHub (Clic sur Fork et le nom du projet).*
 Donner un nom au projet forké, puis

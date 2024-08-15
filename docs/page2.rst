@@ -18,12 +18,12 @@ Lancement de l'application en local.
 - L'application est prête à être démarrée:
   ``python manage.py runserver``
 
-Elle est disponible en local à l'adresse: ``http://127.0.0.1:8000``
+- Elle est disponible en local à l'adresse: ``http://127.0.0.1:8000``
 
-Vous avez également accès à l'administration:
+- Vous avez également accès à l'administration:
 - Url: ``http://127.0.0.1:8000/admin``
-- Id: admin
-- Password: Abc1234!
+- Id: ``admin``
+- Password: ``Abc1234!``
 
 
 
