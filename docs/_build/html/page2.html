@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Résolution des problemes du projet. &mdash; Documentation Clone-Python-OC-Lettings-FR 1.0.0</title>
+  <title>Lancement et test de l’application en local. &mdash; Documentation Clone-Python-OC-Lettings-FR 1.0.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -22,7 +22,9 @@
         <script src="_static/translations.js?v=bf059b8c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Recherche" href="search.html" /> 
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Surveillance de l’application et des erreurs avec Sentry." href="page3.html" />
+    <link rel="prev" title="Bienvenue sur la documentation du site Web de Orange County Lettings." href="page1.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,7 +48,12 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="page1.html">Bienvenue sur la documentation du site Web de Orange County Lettings.</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lancement et test de l’application en local.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page3.html">Surveillance de l’application et des erreurs avec Sentry.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page4.html">Mise en place du déploiement avec Docker, et le pipleline Cicd:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page5.html">Documentation de l’application.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">Clone-Python-OC-Lettings-FR</a></li>
 </ul>
 
@@ -64,7 +71,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Résolution des problemes du projet.</li>
+      <li class="breadcrumb-item active">Lancement et test de l’application en local.</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/page2.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -74,49 +81,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="resolution-des-problemes-du-projet">
-<h1>Résolution des problemes du projet.<a class="headerlink" href="#resolution-des-problemes-du-projet" title="Lien vers cette rubrique"></a></h1>
-<p>Après toutes ces modifications, note application est maintenant fonctionnelle.</p>
-<section id="admin">
-<h2>Admin:<a class="headerlink" href="#admin" title="Lien vers cette rubrique"></a></h2>
-<p>Nous devons maintenant redistribuer oc_lettings_site/admin.py dans les modules profiles/admin.py et lettings/admin.py,
-et supprimer le dossier oc_lettings_site/admin.py
-Dorénavant nous avons accès à l’administration en ligne.</p>
-</section>
-<section id="correction-du-linting-avec-flake8">
-<h2>Correction du linting avec flake8:<a class="headerlink" href="#correction-du-linting-avec-flake8" title="Lien vers cette rubrique"></a></h2>
-<p>Revue du code et nettoyage lignes inutiles.
-<code class="docutils literal notranslate"><span class="pre">flake8</span></code> renvoie tous les fichier à formater conformément à PEP8.</p>
-</section>
-<section id="gestion-des-erreurs-404-et-500">
-<h2>Gestion des erreurs 404 et 500:<a class="headerlink" href="#gestion-des-erreurs-404-et-500" title="Lien vers cette rubrique"></a></h2>
-<p>Création de pages personnalisées (error404.html, error500.html) pour les erreurs sus mentionnées,
-dans le dossier templates à la racine. Ces erreurs sont appellées par différentes fonctions dans les views de chaques
-applications.</p>
-</section>
-<section id="creation-de-docstrings-sur-les-modules-les-classes-et-les-fonctions">
-<h2>Création de docstrings sur les modules les classes et les fonctions:<a class="headerlink" href="#creation-de-docstrings-sur-les-modules-les-classes-et-les-fonctions" title="Lien vers cette rubrique"></a></h2>
-<p>Les docstrings doivent expliquer la fonctionnalité, les paramètres, la valeur de retour et
-tout autre détail important du code.</p>
-</section>
-<section id="gestion-de-la-couverture-de-tests-80">
-<h2>Gestion de la couverture de tests (&gt;80%):<a class="headerlink" href="#gestion-de-la-couverture-de-tests-80" title="Lien vers cette rubrique"></a></h2>
-<p>Regroupement des tests par applications, en créant un dossier tests dans lettings et profiles.
-Nous pouvons tester en local avec la commande pytest.
-pytest-cov permet de tester le projet:
-Nous devons créer un fichier .coveragrc éliminant les dossiers et fichiers n’ayant pas besoin d’être testés.
-<code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">--cov=.</span></code> renvoie un rapport en console.
-<code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">--cov=.</span> <span class="pre">--cov-report=html</span></code> affiche le rapport en html via le navigateur:
-Cette dernière commande affichera le détail de la couverture ligne par ligne.
-L’outil de couveture mentionnera en rouge le code qui n’a pas été testé.
-Nous avons un rappor affichant 81% de réussite, ce qui est acceptable.</p>
-</section>
+  <section id="lancement-et-test-de-l-application-en-local">
+<h1>Lancement et test de l’application en local.<a class="headerlink" href="#lancement-et-test-de-l-application-en-local" title="Lien vers cette rubrique"></a></h1>
+<ul class="simple">
+<li><p>Vous devez tout d’abord activer l’environnement créé précédemment.</p></li>
+<li><p>En utilisant Git bash avec la commande:
+<code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">venv/Scripts/activate</span></code></p></li>
+<li><p>Vous pouvez confirmer que la commande <cite>python</cite> exécute l’interpréteur Python dans l’environnement virtuel avec la
+commande:
+<cite>which python</cite>
+L’invite de commande sera précédée de <cite>env</cite> en cas de succès.</p></li>
+<li><p>Ou avec Windows PowerShell avec la commande:
+<code class="docutils literal notranslate"><span class="pre">.\venv\Scripts\Activate.ps1</span></code></p></li>
+<li><p>Une fois ceci réalisé vous devez installer les dépendances:
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code> installe tous les packages requis pour votre application.</p></li>
+<li><p>L’application est prête à être démarrée:
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span></code></p></li>
+</ul>
+<p>Elle est disponible en local à l’adresse: <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8000</span></code></p>
+<p>Vous avez également accès à l’administration:
+Url: <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8000/admin</span></code>
+Id: admin
+Password: Abc1234!</p>
 </section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="page1.html" class="btn btn-neutral float-left" title="Bienvenue sur la documentation du site Web de Orange County Lettings." accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="page3.html" class="btn btn-neutral float-right" title="Surveillance de l’application et des erreurs avec Sentry." accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

@@ -1,40 +1,29 @@
-Résolution des problemes du projet.
-===================================
-Après toutes ces modifications, note application est maintenant fonctionnelle.
+Lancement et test de l'application en local.
+============================================
+- Vous devez tout d'abord activer l'environnement créé précédemment.
+- En utilisant Git bash avec la commande:
+  ``source venv/Scripts/activate``
+- Vous pouvez confirmer que la commande `python` exécute l'interpréteur Python dans l'environnement virtuel avec la
+  commande:
+  `which python`
+  L'invite de commande sera précédée de `env` en cas de succès.
 
-Admin:
-------
-Nous devons maintenant redistribuer oc_lettings_site/admin.py dans les modules profiles/admin.py et lettings/admin.py,
-et supprimer le dossier oc_lettings_site/admin.py
-Dorénavant nous avons accès à l'administration en ligne.
+- Ou avec Windows PowerShell avec la commande:
+  ``.\venv\Scripts\Activate.ps1``
 
-Correction du linting avec flake8:
-----------------------------------
-Revue du code et nettoyage lignes inutiles.
-``flake8`` renvoie tous les fichier à formater conformément à PEP8.
+- Une fois ceci réalisé vous devez installer les dépendances:
+  ``pip install -r requirements.txt`` installe tous les packages requis pour votre application.
 
-Gestion des erreurs 404 et 500:
--------------------------------
-Création de pages personnalisées (error404.html, error500.html) pour les erreurs sus mentionnées,
-dans le dossier templates à la racine. Ces erreurs sont appellées par différentes fonctions dans les views de chaques
-applications.
+- L'application est prête à être démarrée:
+  ``python manage.py runserver``
 
-Création de docstrings sur les modules les classes et les fonctions:
---------------------------------------------------------------------
-Les docstrings doivent expliquer la fonctionnalité, les paramètres, la valeur de retour et
-tout autre détail important du code.
+Elle est disponible en local à l'adresse: ``http://127.0.0.1:8000``
 
-Gestion de la couverture de tests (>80%):
------------------------------------------
-Regroupement des tests par applications, en créant un dossier tests dans lettings et profiles.
-Nous pouvons tester en local avec la commande pytest.
-pytest-cov permet de tester le projet:
-Nous devons créer un fichier .coveragrc éliminant les dossiers et fichiers n'ayant pas besoin d'être testés.
-``pytest --cov=.`` renvoie un rapport en console.
-``pytest --cov=. --cov-report=html`` affiche le rapport en html via le navigateur:
-Cette dernière commande affichera le détail de la couverture ligne par ligne.
-L'outil de couveture mentionnera en rouge le code qui n'a pas été testé.
-Nous avons un rappor affichant 81% de réussite, ce qui est acceptable.
+Vous avez également accès à l'administration:
+Url: ``http://127.0.0.1:8000/admin``
+Id: admin
+Password: Abc1234!
+
 
 
 

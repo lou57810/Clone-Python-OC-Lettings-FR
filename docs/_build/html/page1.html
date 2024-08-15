@@ -23,7 +23,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Résolution des problemes du projet." href="page2.html" />
+    <link rel="next" title="Lancement et test de l’application en local." href="page2.html" />
     <link rel="prev" title="Welcome to Clone-Python-OC-Lettings-FR’s documentation!" href="index.html" /> 
 </head>
 
@@ -54,8 +54,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#fork-et-clone-de-l-application">Fork et clone de l’application.</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#lancement-et-test-de-l-application-en-local">Lancement et test de l’application en local.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="page2.html">Résolution des problemes du projet.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page2.html">Lancement et test de l’application en local.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page3.html">Surveillance de l’application et des erreurs avec Sentry.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page4.html">Mise en place du déploiement avec Docker, et le pipleline Cicd:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page5.html">Documentation de l’application.</a></li>
@@ -90,18 +89,17 @@
 <h1>Bienvenue sur la documentation du site Web de Orange County Lettings.<a class="headerlink" href="#bienvenue-sur-la-documentation-du-site-web-de-orange-county-lettings" title="Lien vers cette rubrique"></a></h1>
 <section id="en-prerequis-d-un-point-de-vue-pratique-vous-aurez-besoin-de">
 <h2>En prérequis, d’un point de vue pratique vous aurez besoin de:<a class="headerlink" href="#en-prerequis-d-un-point-de-vue-pratique-vous-aurez-besoin-de" title="Lien vers cette rubrique"></a></h2>
-<ul>
+<ul class="simple">
 <li><p>un compte GitHub avec accès en lecture à ce repository</p></li>
 <li><p>une version Python, version 3.6 ou supérieure à installer(actuellement 3.12).</p></li>
 <li><p>installer Git, avec Git bash de préférence.</p></li>
 <li><p>créer un dossier dans lequel vous pourrez injecter le code hébergé sur GitHub.</p></li>
 <li><p>lancer <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> depuis ce dossier.</p></li>
-<li><dl>
-<dt>d’un environnement virtuel<span class="classifier"><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">venv</span></code> toujours depuis ce dossier. (cet environnement,</span></dt><dd><p>permettra d’installer les packages et les dépendances nécéssaires au fonctionnement de l’application,
-tout en les isolants.)</p>
-</dd>
-</dl>
-</li>
+<li><p>mettre en place un environnement virtuel. <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">venv</span></code> toujours depuis ce dossier.</p></li>
+</ul>
+<ul class="simple">
+<li><p>(cet environnement, permettra d’installer les packages et les dépendances nécéssaires
+au fonctionnement de l’application, tout en les isolants.)</p></li>
 </ul>
 </section>
 <section id="fork-et-clone-de-l-application">
@@ -114,36 +112,13 @@ clone du projet forké sur votre ordinateur local pour isoler le projet de l’o
 La commande <code class="docutils literal notranslate"><span class="pre">ls</span></code> affiche le nom du repositrory cloné sur notre poste de travail.</p>
 </section>
 </section>
-<section id="lancement-et-test-de-l-application-en-local">
-<h1>Lancement et test de l’application en local.<a class="headerlink" href="#lancement-et-test-de-l-application-en-local" title="Lien vers cette rubrique"></a></h1>
-<ul class="simple">
-<li><p>Vous devez tout d’abord activer l’environnement créé précédemment.</p></li>
-<li><p>En utilisant Git bash avec la commande:
-<code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">venv/Scripts/activate</span></code></p></li>
-<li><p>Vous pouvez confirmer que la commande <cite>python</cite> exécute l’interpréteur Python dans l’environnement virtuel avec la
-commande:
-<cite>which python</cite>
-L’invite de commande sera précédée de <cite>env</cite> en cas de succès.</p></li>
-<li><p>Ou avec Windows PowerShell avec la commande:
-<code class="docutils literal notranslate"><span class="pre">.\venv\Scripts\Activate.ps1</span></code></p></li>
-<li><p>Une fois ceci réalisé vous devez installer les dépendances:
-<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code> installe tous les packages requis pour votre application.</p></li>
-<li><p>L’application est prête à être démarrée:
-<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span></code></p></li>
-</ul>
-<p>Elle est disponible en local à l’adresse: <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8000</span></code></p>
-<p>Vous avez également accès à l’administration:
-Url: <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8000/admin</span></code>
-Id: admin
-Password: Abc1234!</p>
-</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
         <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Clone-Python-OC-Lettings-FR’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="page2.html" class="btn btn-neutral float-right" title="Résolution des problemes du projet." accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="page2.html" class="btn btn-neutral float-right" title="Lancement et test de l’application en local." accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
