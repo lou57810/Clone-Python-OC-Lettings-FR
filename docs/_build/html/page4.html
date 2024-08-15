@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mise en place du déploiement avec Docker, et le pipleline Cicd: &mdash; Documentation Clone-Python-OC-Lettings-FR 1.0.0</title>
+  <title>1. Déploiement: &mdash; Documentation Clone-Python-OC-Lettings-FR 1.0.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -22,7 +22,9 @@
         <script src="_static/translations.js?v=bf059b8c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Recherche" href="search.html" /> 
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Docker" href="page5.html" />
+    <link rel="prev" title="Surveillance avec Sentry." href="page3.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,7 +48,19 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="page1.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page2.html">Lancement de l’application en local.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page3.html">Surveillance avec Sentry.</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Déploiement:</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mise-en-place-du-deploiement-avec-docker-et-le-pipleline-cicd">Mise en place du déploiement avec Docker, et le pipleline Cicd:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gunicorn">Gunicorn:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#docker">Docker:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#render">Render:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#circleci">CircleCi:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="page5.html">Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">Clone-Python-OC-Lettings-FR</a></li>
 </ul>
 
@@ -64,7 +78,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Mise en place du déploiement avec Docker, et le pipleline Cicd:</li>
+      <li class="breadcrumb-item active">1. Déploiement:</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/page4.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -74,70 +88,48 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="mise-en-place-du-deploiement-avec-docker-et-le-pipleline-cicd">
-<h1>Mise en place du déploiement avec Docker, et le pipleline Cicd:<a class="headerlink" href="#mise-en-place-du-deploiement-avec-docker-et-le-pipleline-cicd" title="Lien vers cette rubrique"></a></h1>
-<p>Plusieurs étapes seront nécéssaires pour le déploiement de notre application.</p>
+  <section id="deploiement">
+<h1>1. Déploiement:<a class="headerlink" href="#deploiement" title="Lien vers cette rubrique"></a></h1>
+<section id="mise-en-place-du-deploiement-avec-docker-et-le-pipleline-cicd">
+<h2>Mise en place du déploiement avec Docker, et le pipleline Cicd:<a class="headerlink" href="#mise-en-place-du-deploiement-avec-docker-et-le-pipleline-cicd" title="Lien vers cette rubrique"></a></h2>
+<p>Plusieurs étapes seront nécéssaires pour le déploiement de notre application:
+- Gunicorn
+- Docker
+- CircleCi (Ci/Cd)
+- Render</p>
+</section>
+<section id="gunicorn">
+<h2>Gunicorn:<a class="headerlink" href="#gunicorn" title="Lien vers cette rubrique"></a></h2>
+<p>Gunicorn “Green Unicorn” is a Python WSGI HTTP Server Web for UNIX.
+Gunicorn joue le rôle d’un serveur web(adapté au langage Python), comme par exemple Apache ou Nginx,
+mais en version légère.
+Cette fonction est renseignée dans le Dockerfile:
+<code class="docutils literal notranslate"><span class="pre">CMD</span> <span class="pre">[&quot;gunicorn&quot;,</span> <span class="pre">&quot;--bind&quot;,</span> <span class="pre">&quot;0.0.0.0:8000&quot;,</span> <span class="pre">&quot;oc_lettings_site.wsgi:application&quot;]</span></code></p>
+</section>
 <section id="docker">
 <h2>Docker:<a class="headerlink" href="#docker" title="Lien vers cette rubrique"></a></h2>
-<p>Création d’un container et d’une image pour notre application.
+<p>Création d’un container et d’une image pour l” application.
 Tout d’abord, installer Docker en local, et s’enregistrer sur Docker Hub.
-Nous devons également créér un Dockerfile à la racine de l’application:
-Ce fichier décrit l’ensemble des étapes à réaliser pour pouvoir lancer notre application.
-Chaque instruction que nous allons donner dans notre Dockerfile va créer une nouvelle layer,
+Le Dockerfile est déjà implémenté dans le dossier racine, néanmoins vous devez renseigner votre propre dns Sentry.
+Dockerfile décrit l’ensemble des étapes à réaliser pour pouvoir lancer votre nouvelle application.
+Chaque instruction que vous allez donner dans votre Dockerfile va créer une nouvelle layer,
 correspondant à chaque étape de la construction de l’image.
 Comme exemple, à la base:
 <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">base</span> <span class="pre">image</span>
 <span class="pre">FROM</span> <span class="pre">python:3.12</span></code></p>
 </section>
-<section id="gunicorn">
-<h2>Gunicorn:<a class="headerlink" href="#gunicorn" title="Lien vers cette rubrique"></a></h2>
-<p>Gunicorn “Green Unicorn” is a Python WSGI HTTP Server Web for UNIX.
-Gunicorn joue le rôle d’un serveur web(adapté au langage Python), comme par exemple d’autres comme
-Apache ou Nginx, mais en version légère.
-Nous avons besoin de renseigner sa fonction dans le Dockerfile:
-<code class="docutils literal notranslate"><span class="pre">CMD</span> <span class="pre">[&quot;gunicorn&quot;,</span> <span class="pre">&quot;--bind&quot;,</span> <span class="pre">&quot;0.0.0.0:8000&quot;,</span> <span class="pre">&quot;oc_lettings_site.wsgi:application&quot;]</span></code></p>
-</section>
-<section id="revenons-en-a-docker">
-<h2>Revenons en à Docker:<a class="headerlink" href="#revenons-en-a-docker" title="Lien vers cette rubrique"></a></h2>
-<p>Créeons également un fichier .dockerignore dans lequel les étapes inutiles peuvent être ignorées.</p>
-<p>Enfin,
-- création de l’image avec la commande suivante:</p>
-<blockquote>
-<div><p><a href="#id1"><span class="problematic" id="id2">``</span></a>docker build -t nom_application . ``
-L’argument -t permet de donner un nom à votre image Docker.
-Cela permet de retrouver plus facilement l” image par la suite.
-Le . est le répertoire où se trouve le Dockerfile ; dans notre cas, à la racine de notre projet.</p>
-</div></blockquote>
-<ul class="simple">
-<li><dl class="simple">
-<dt>lancement du container:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-d</span> <span class="pre">-p</span> <span class="pre">8000:8000</span> <span class="pre">nom_application</span></code> (-p = port 8000:8000 pour Django)
-Le premier port est interne et le deuxième externe.</p>
-</dd>
-</dl>
-</li>
-<li><p>Nous pouvons accèder à notre application en lancant dans le navigateur: <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a></p></li>
-</ul>
-</section>
-<section id="docker-hub">
-<h2>Docker Hub<a class="headerlink" href="#docker-hub" title="Lien vers cette rubrique"></a></h2>
-<p>Pour l’instant, notre application est joignable en local, mais nous voulons la rendre publique.
-Pour rendre cette image publique,  allons la publier sur Docker Hub,
-en lançant les commandes suivantes:
-<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">tag</span> <span class="pre">ocr-docker-build:latest</span> <span class="pre">YOUR_USERNAME/nom_application:latest</span></code> (Crée un lien entre l’image créée et</p>
-<blockquote>
-<div><p>l’image à envoyer.)</p>
-</div></blockquote>
-<p>Puis:
-<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">push</span> <span class="pre">YOUR_USERNAME/nom_application:latest</span></code>
-Voilà, l’image figure sur une “Registry” sur Docker Hub.</p>
-</section>
 <section id="render">
 <h2>Render:<a class="headerlink" href="#render" title="Lien vers cette rubrique"></a></h2>
 <p>Render est une plateforme populaire pour le déploiement de pages web et d’applications.
-Nous avons Docker pour le stockage de notre application, Gunicorn comme Server Web, mais,
-pour le moment, il nous manque un hébergeur.
-C’est ici que Render rentre en fonction pour la diffusion de notre application sur la toile.
-Mais nous devons renseigner quelques variables pour l’utiliser.
+Docker pour le stockage de notre application, Gunicorn comme Server Web, mais,
+pour le moment, il manque un hébergeur.
+C’est ici que Render rentre en fonction pour la diffusion de l’application sur la toile.</p>
+</section>
+<section id="circleci">
+<h2>CircleCi:<a class="headerlink" href="#circleci" title="Lien vers cette rubrique"></a></h2>
+<p>CircleCi est l’outil manquant au développement de notre application:
+CircleCi permet de tester chaque commit réalisé avec git, et remonter les informations de défaillance ou de succès.</p>
+<p>Mais nous devons renseigner quelques variables pour l’utiliser.
 Dans la rubrique Settings:
 - Name: Python-OC-Lettings-FR
 - Région: Frankfurt (EU Central)
@@ -147,12 +139,7 @@ Dans Build &amp; Deploy:
 - Deploy hook: (Render propose de la générer ou de la changer automatiquement.)
 Dans la rubrique Environnement:
 - SECRET_KEY: La variable que nous avons copiée depuis le fichier à la racine: .env</p>
-</section>
-<section id="circleci">
-<h2>CircleCi:<a class="headerlink" href="#circleci" title="Lien vers cette rubrique"></a></h2>
-<p>CircleCi est l’outil manquant au développement de notre application:
-CircleCi permet de tester chaque commit réalisé avec git, et remonter les informations de défaillance ou de succès.
-Pour celà il nous renseigner quelque indications et en particulier les variables d’environnement:
+<p>Pour celà il nous renseigner quelque indications et en particulier les variables d’environnement:
 - DEBUG = False
 - DEPLOY_HOOK = (valeur générée et figurant dans Render/Deployhook)
 - DOCKER_HUB_PASSWORD = personal_password_hub (Le mien ou le vôtre)
@@ -169,7 +156,10 @@ Si vous utilisez Render comme solution de déploiement, veillez à désactiver l
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="page3.html" class="btn btn-neutral float-left" title="Surveillance avec Sentry." accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="page5.html" class="btn btn-neutral float-right" title="Docker" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
