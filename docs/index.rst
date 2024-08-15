@@ -15,6 +15,8 @@ Welcome to Clone-Python-OC-Lettings-FR's documentation!
    page3.rst
    page4.rst
    page5.rst
+   page6.rst
+   page7.rst
 
    modules
 

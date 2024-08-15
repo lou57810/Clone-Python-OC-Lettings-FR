@@ -1,4 +1,4 @@
-1. Déploiement:
+Déploiement:
 ===============
 Mise en place du déploiement avec Docker, et le pipleline Cicd:
 ---------------------------------------------------------------
