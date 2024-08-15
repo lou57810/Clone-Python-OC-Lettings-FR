@@ -1,4 +1,4 @@
-Déploiement:
+Déploiement
 ===============
 Mise en place du déploiement avec Docker, et le pipleline Cicd:
 ---------------------------------------------------------------
@@ -40,33 +40,3 @@ CircleCi:
 CircleCi est l'outil manquant au développement de notre application:
 CircleCi permet de tester chaque commit réalisé avec git, et remonter les informations de défaillance ou de succès.
 
-
-
-
-
-
-
-Mais nous devons renseigner quelques variables pour l'utiliser.
-Dans la rubrique Settings:
-- Name: Python-OC-Lettings-FR
-- Région: Frankfurt (EU Central)
-Dans Build & Deploy:
-- Repository: https://github.com/lou57810/Python-OC-Lettings-FR
--Branch: 'main' (Dans notre cas)
-- Deploy hook: (Render propose de la générer ou de la changer automatiquement.)
-Dans la rubrique Environnement:
-- SECRET_KEY: La variable que nous avons copiée depuis le fichier à la racine: .env
-
-
-Pour celà il nous renseigner quelque indications et en particulier les variables d'environnement:
-- DEBUG = False
-- DEPLOY_HOOK = (valeur générée et figurant dans Render/Deployhook)
-- DOCKER_HUB_PASSWORD = personal_password_hub (Le mien ou le vôtre)
-- DOCKER_HUB_USER_ID = personal_user_id (Le mien ou le vôtre)
-- SECRET_KEY = celui défini dans racine/.env
-- dsn = celui défini dans racine/.env
-
-Circleci vérifie si les test existent et s'il réusissent.
-Création d'un fichier local pour les variables d'environnement.
-Configuration Django en mode production.
-Si vous utilisez Render comme solution de déploiement, veillez à désactiver le déploiement automatique à chaque commit.

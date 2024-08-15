@@ -7,7 +7,7 @@ Welcome to Clone-Python-OC-Lettings-FR's documentation!
 =======================================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
    :caption: Contents:
 
    page1.rst

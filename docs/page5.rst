@@ -1,5 +1,5 @@
-Docker
-======
+Deploiement Docker
+==================
 Précédemment (page4) vous vous êtes enregistré sur dockehub, et avez installé docker en local.
 Préalablement les fichier Dockerfile et .dockerignore (étapes inutiles à ignorer) sont déjà créés et figurent dans le code.
 Rappel: Changer la valeur `dns` de votre acompte Sentry.

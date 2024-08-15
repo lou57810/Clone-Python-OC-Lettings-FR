@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Déploiement: &mdash; Documentation Clone-Python-OC-Lettings-FR 1.0.0</title>
+  <title>Déploiement &mdash; Documentation Clone-Python-OC-Lettings-FR 1.0.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -23,7 +23,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Docker" href="page5.html" />
+    <link rel="next" title="Deploiement Docker" href="page5.html" />
     <link rel="prev" title="Surveillance avec Sentry." href="page3.html" /> 
 </head>
 
@@ -52,7 +52,7 @@
 <li class="toctree-l1"><a class="reference internal" href="page1.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page2.html">Lancement de l’application en local.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page3.html">Surveillance avec Sentry.</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Déploiement:</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Déploiement</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#mise-en-place-du-deploiement-avec-docker-et-le-pipleline-cicd">Mise en place du déploiement avec Docker, et le pipleline Cicd:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gunicorn">Gunicorn:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#docker">Docker:</a></li>
@@ -60,7 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#circleci">CircleCi:</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="page5.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page5.html">Deploiement Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">Clone-Python-OC-Lettings-FR</a></li>
 </ul>
 
@@ -78,7 +78,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Déploiement:</li>
+      <li class="breadcrumb-item active">Déploiement</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/page4.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -89,7 +89,7 @@
            <div itemprop="articleBody">
              
   <section id="deploiement">
-<h1>Déploiement:<a class="headerlink" href="#deploiement" title="Lien vers cette rubrique"></a></h1>
+<h1>Déploiement<a class="headerlink" href="#deploiement" title="Lien vers cette rubrique"></a></h1>
 <section id="mise-en-place-du-deploiement-avec-docker-et-le-pipleline-cicd">
 <h2>Mise en place du déploiement avec Docker, et le pipleline Cicd:<a class="headerlink" href="#mise-en-place-du-deploiement-avec-docker-et-le-pipleline-cicd" title="Lien vers cette rubrique"></a></h2>
 <p>Plusieurs étapes seront nécéssaires pour le déploiement de notre application:
@@ -129,27 +129,6 @@ C’est ici que Render rentre en fonction pour la diffusion de l’application s
 <h2>CircleCi:<a class="headerlink" href="#circleci" title="Lien vers cette rubrique"></a></h2>
 <p>CircleCi est l’outil manquant au développement de notre application:
 CircleCi permet de tester chaque commit réalisé avec git, et remonter les informations de défaillance ou de succès.</p>
-<p>Mais nous devons renseigner quelques variables pour l’utiliser.
-Dans la rubrique Settings:
-- Name: Python-OC-Lettings-FR
-- Région: Frankfurt (EU Central)
-Dans Build &amp; Deploy:
-- Repository: <a class="reference external" href="https://github.com/lou57810/Python-OC-Lettings-FR">https://github.com/lou57810/Python-OC-Lettings-FR</a>
--Branch: “main” (Dans notre cas)
-- Deploy hook: (Render propose de la générer ou de la changer automatiquement.)
-Dans la rubrique Environnement:
-- SECRET_KEY: La variable que nous avons copiée depuis le fichier à la racine: .env</p>
-<p>Pour celà il nous renseigner quelque indications et en particulier les variables d’environnement:
-- DEBUG = False
-- DEPLOY_HOOK = (valeur générée et figurant dans Render/Deployhook)
-- DOCKER_HUB_PASSWORD = personal_password_hub (Le mien ou le vôtre)
-- DOCKER_HUB_USER_ID = personal_user_id (Le mien ou le vôtre)
-- SECRET_KEY = celui défini dans racine/.env
-- dsn = celui défini dans racine/.env</p>
-<p>Circleci vérifie si les test existent et s’il réusissent.
-Création d’un fichier local pour les variables d’environnement.
-Configuration Django en mode production.
-Si vous utilisez Render comme solution de déploiement, veillez à désactiver le déploiement automatique à chaque commit.</p>
 </section>
 </section>
 
@@ -158,7 +137,7 @@ Si vous utilisez Render comme solution de déploiement, veillez à désactiver l
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
         <a href="page3.html" class="btn btn-neutral float-left" title="Surveillance avec Sentry." accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="page5.html" class="btn btn-neutral float-right" title="Docker" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="page5.html" class="btn btn-neutral float-right" title="Deploiement Docker" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
