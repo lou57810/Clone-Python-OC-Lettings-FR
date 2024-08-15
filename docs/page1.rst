@@ -23,14 +23,14 @@ clone du projet forké sur votre ordinateur local pour isoler le projet de l'ori
 La commande ``ls`` affiche le nom du repositrory cloné sur notre poste de travail.
 
 Lancement et test de l'application en local.
---------------------------------------------
+============================================
 - Vous devez tout d'abord activer l'environnement créé précédemment.
 - En utilisant Git bash avec la commande:
   ``source venv/Scripts/activate``
-- Vous pouverz confirmer que la commande `python` exécute l'interpréteur Python dans l'environnement virtuel avec la
+- Vous pouvez confirmer que la commande `python` exécute l'interpréteur Python dans l'environnement virtuel avec la
   commande:
   `which python`
-  Mais de toutes façon l'invite de commande sera précédée de `env` en cas de succès.
+  L'invite de commande sera précédée de `env` en cas de succès.
 
 - Ou avec Windows PowerShell avec la commande:
   ``.\venv\Scripts\Activate.ps1``
@@ -42,3 +42,8 @@ Lancement et test de l'application en local.
   ``python manage.py runserver``
 
 Elle est disponible en local à l'adresse: ``http://127.0.0.1:8000``
+
+Vous avez également accès à l'administration:
+Url: ``http://127.0.0.1:8000/admin``
+Id: admin
+Password: Abc1234!

@@ -52,9 +52,9 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Bienvenue sur la documentation du site Web de Orange County Lettings.</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#en-prerequis-d-un-point-de-vue-pratique-vous-aurez-besoin-de">En prérequis, d’un point de vue pratique vous aurez besoin de:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fork-et-clone-de-l-application">Fork et clone de l’application.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lancement-et-test-de-l-application-en-local">Lancement et test de l’application en local.</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="#lancement-et-test-de-l-application-en-local">Lancement et test de l’application en local.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page2.html">Résolution des problemes du projet.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page3.html">Surveillance de l’application et des erreurs avec Sentry.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page4.html">Mise en place du déploiement avec Docker, et le pipleline Cicd:</a></li>
@@ -113,16 +113,17 @@ clone du projet forké sur votre ordinateur local pour isoler le projet de l’o
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/vote_id_git/nom_de_votre_projet_forké.git</span></code>
 La commande <code class="docutils literal notranslate"><span class="pre">ls</span></code> affiche le nom du repositrory cloné sur notre poste de travail.</p>
 </section>
+</section>
 <section id="lancement-et-test-de-l-application-en-local">
-<h2>Lancement et test de l’application en local.<a class="headerlink" href="#lancement-et-test-de-l-application-en-local" title="Lien vers cette rubrique"></a></h2>
+<h1>Lancement et test de l’application en local.<a class="headerlink" href="#lancement-et-test-de-l-application-en-local" title="Lien vers cette rubrique"></a></h1>
 <ul class="simple">
 <li><p>Vous devez tout d’abord activer l’environnement créé précédemment.</p></li>
 <li><p>En utilisant Git bash avec la commande:
 <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">venv/Scripts/activate</span></code></p></li>
-<li><p>Vous pouverz confirmer que la commande <cite>python</cite> exécute l’interpréteur Python dans l’environnement virtuel avec la
+<li><p>Vous pouvez confirmer que la commande <cite>python</cite> exécute l’interpréteur Python dans l’environnement virtuel avec la
 commande:
 <cite>which python</cite>
-Mais de toutes façon l’invite de commande sera précédée de <cite>env</cite> en cas de succès.</p></li>
+L’invite de commande sera précédée de <cite>env</cite> en cas de succès.</p></li>
 <li><p>Ou avec Windows PowerShell avec la commande:
 <code class="docutils literal notranslate"><span class="pre">.\venv\Scripts\Activate.ps1</span></code></p></li>
 <li><p>Une fois ceci réalisé vous devez installer les dépendances:
@@ -131,7 +132,10 @@ Mais de toutes façon l’invite de commande sera précédée de <cite>env</cite
 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span></code></p></li>
 </ul>
 <p>Elle est disponible en local à l’adresse: <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8000</span></code></p>
-</section>
+<p>Vous avez également accès à l’administration:
+Url: <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8000/admin</span></code>
+Id: admin
+Password: Abc1234!</p>
 </section>
 
 
