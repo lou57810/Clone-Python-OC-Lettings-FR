@@ -20,9 +20,9 @@ Lancement et test de l'application en local.
 Elle est disponible en local à l'adresse: ``http://127.0.0.1:8000``
 
 Vous avez également accès à l'administration:
-Url: ``http://127.0.0.1:8000/admin``
-Id: admin
-Password: Abc1234!
+- Url: ``http://127.0.0.1:8000/admin``
+- Id: admin
+- Password: Abc1234!
 
 
 
