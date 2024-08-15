@@ -1,5 +1,6 @@
-Lancement et test de l'application en local.
-============================================
+Lancement de l'application en local.
+====================================
+
 - Vous devez tout d'abord activer l'environnement créé précédemment.
 - En utilisant Git bash avec la commande:
   ``source venv/Scripts/activate``

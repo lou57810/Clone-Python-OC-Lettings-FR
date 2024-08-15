@@ -1,5 +1,5 @@
-Bienvenue sur la documentation du site Web de Orange County Lettings.
-=====================================================================
+Installation
+============
 
 En prérequis, d'un point de vue pratique vous aurez besoin de:
 --------------------------------------------------------------
