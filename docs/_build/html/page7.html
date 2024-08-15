@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Déploiement CircleCi &mdash; Documentation Clone-Python-OC-Lettings-FR 1.0.0</title>
+  <title>CircleCi &mdash; Documentation Clone-Python-OC-Lettings-FR 1.0.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -24,7 +24,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Clone-Python-OC-Lettings-FR" href="modules.html" />
-    <link rel="prev" title="Deploiement Render:" href="page6.html" /> 
+    <link rel="prev" title="Render:" href="page6.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -53,9 +53,9 @@
 <li class="toctree-l1"><a class="reference internal" href="page2.html">Lancement de l’application en local.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page3.html">Surveillance avec Sentry.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page4.html">Déploiement</a></li>
-<li class="toctree-l1"><a class="reference internal" href="page5.html">Deploiement Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="page6.html">Deploiement Render:</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Déploiement CircleCi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page5.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page6.html">Render:</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CircleCi</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">Clone-Python-OC-Lettings-FR</a></li>
 </ul>
 
@@ -73,7 +73,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Déploiement CircleCi</li>
+      <li class="breadcrumb-item active">CircleCi</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/page7.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -83,28 +83,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="deploiement-circleci">
-<h1>Déploiement CircleCi<a class="headerlink" href="#deploiement-circleci" title="Lien vers cette rubrique"></a></h1>
+  <section id="circleci">
+<h1>CircleCi<a class="headerlink" href="#circleci" title="Lien vers cette rubrique"></a></h1>
 <p>Création d’un compte sur CircleCi. (Comme précédemment avec Render, utiliser le référencement GitHub, est très pratique.</p>
-<p>Pour profiter des retours de CircleCi il vous renseigner quelque indications
-et en particulier les variables d’environnement:
-- DEBUG = False
-- DEPLOY_HOOK = (valeur générée et figurant dans Render/Deployhook)
-- DOCKER_HUB_PASSWORD = personal_password_hub (Le mien ou le vôtre)
-- DOCKER_HUB_USER_ID = personal_user_id (Le mien ou le vôtre)
-- SECRET_KEY = celui défini dans racine/.env
-- dsn = celui défini dans racine/.env</p>
-<p>Circleci vérifie si les test existent et s’il réusissent.
-Création d’un fichier local pour les variables d’environnement.
-Configuration Django en mode production.
-Si vous utilisez Render comme solution de déploiement, veillez à désactiver le déploiement automatique à chaque commit.</p>
+<ul class="simple">
+<li><p>Pour profiter des retours de CircleCi il vous renseigner quelque indications</p></li>
+<li><p>et en particulier les variables d’environnement:</p></li>
+<li><p>DEBUG = False</p></li>
+<li><p>DEPLOY_HOOK = (valeur générée et figurant dans Render/Deployhook)</p></li>
+<li><p>DOCKER_HUB_PASSWORD = personal_password_hub (Le mien ou le vôtre)</p></li>
+<li><p>DOCKER_HUB_USER_ID = personal_user_id (Le mien ou le vôtre)</p></li>
+<li><p>SECRET_KEY = celui défini dans racine/.env</p></li>
+<li><p>dsn = celui défini dans racine/.env</p></li>
+<li><p>Circleci vérifie si les test existent et s’il réusissent.</p></li>
+<li><p>Création d’un fichier local pour les variables d’environnement.</p></li>
+<li><p>Configuration Django en mode production.</p></li>
+<li><p>Si vous utilisez Render comme solution de déploiement, veillez à désactiver le déploiement automatique à chaque commit.</p></li>
+</ul>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="page6.html" class="btn btn-neutral float-left" title="Deploiement Render:" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="page6.html" class="btn btn-neutral float-left" title="Render:" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
         <a href="modules.html" class="btn btn-neutral float-right" title="Clone-Python-OC-Lettings-FR" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

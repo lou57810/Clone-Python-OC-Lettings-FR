@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deploiement Render: &mdash; Documentation Clone-Python-OC-Lettings-FR 1.0.0</title>
+  <title>Render: &mdash; Documentation Clone-Python-OC-Lettings-FR 1.0.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -23,8 +23,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Déploiement CircleCi" href="page7.html" />
-    <link rel="prev" title="Deploiement Docker" href="page5.html" /> 
+    <link rel="next" title="CircleCi" href="page7.html" />
+    <link rel="prev" title="Docker" href="page5.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -53,9 +53,9 @@
 <li class="toctree-l1"><a class="reference internal" href="page2.html">Lancement de l’application en local.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page3.html">Surveillance avec Sentry.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page4.html">Déploiement</a></li>
-<li class="toctree-l1"><a class="reference internal" href="page5.html">Deploiement Docker</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Deploiement Render:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="page7.html">Déploiement CircleCi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page5.html">Docker</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Render:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page7.html">CircleCi</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">Clone-Python-OC-Lettings-FR</a></li>
 </ul>
 
@@ -73,7 +73,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Deploiement Render:</li>
+      <li class="breadcrumb-item active">Render:</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/page6.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -83,29 +83,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="deploiement-render">
-<h1>Deploiement Render:<a class="headerlink" href="#deploiement-render" title="Lien vers cette rubrique"></a></h1>
-<p>Création d’un compte. (Peut être lié avec GitHub pour le côté pratique)</p>
-<p>Renseigner quelques variables pour utiliser Render conjointement avec l’application stockée sur GitHub.
-Dans la rubrique Settings:
-- Name: <code class="docutils literal notranslate"><span class="pre">Nom</span> <span class="pre">de</span> <span class="pre">votre</span> <span class="pre">application</span> <span class="pre">clonée</span></code>
-- Région: <code class="docutils literal notranslate"><span class="pre">Frankfurt</span> <span class="pre">(EU</span> <span class="pre">Central)</span></code> ou autre adresse proche.
-Dans Build &amp; Deploy:
-- Repository: <code class="docutils literal notranslate"><span class="pre">Nom</span> <span class="pre">de</span> <span class="pre">votre</span> <span class="pre">repository</span></code> ex: <code class="docutils literal notranslate"><span class="pre">https://github.com/lou57810/Clone-Python-OC-Lettings-FR</span></code>
--Branch: “main” “master` ou autres.
-- Deploy hook: (Render propose de la générer ou de la changer automatiquement.)
-Dans la rubrique Environnement:
-- SECRET_KEY: La variable que nous avons copiée depuis le fichier à la racine: .env</p>
-<p>Une fois ces valeurs renseignées, Render vous communique l’adresse à utiliser en production sur la page ou figure votre
-projet..</p>
+  <section id="render">
+<h1>Render:<a class="headerlink" href="#render" title="Lien vers cette rubrique"></a></h1>
+<ul class="simple">
+<li><p>Création d’un compte. (Peut être lié avec GitHub pour le côté pratique)</p></li>
+<li><p>Renseigner quelques variables pour utiliser Render conjointement avec l’application stockée sur GitHub.</p></li>
+<li><p>Dans la rubrique Settings:</p></li>
+<li><p>Name: <code class="docutils literal notranslate"><span class="pre">Nom</span> <span class="pre">de</span> <span class="pre">votre</span> <span class="pre">application</span> <span class="pre">clonée</span></code></p></li>
+<li><p>Région: <code class="docutils literal notranslate"><span class="pre">Frankfurt</span> <span class="pre">(EU</span> <span class="pre">Central)</span></code> ou autre adresse proche.</p></li>
+<li><p>Dans Build &amp; Deploy:</p></li>
+<li><p>Repository: <code class="docutils literal notranslate"><span class="pre">Nom</span> <span class="pre">de</span> <span class="pre">votre</span> <span class="pre">repository</span></code> ex: <code class="docutils literal notranslate"><span class="pre">https://github.com/lou57810/Clone-Python-OC-Lettings-FR</span></code></p></li>
+<li><p>Branch: “main” “master` ou autres.</p></li>
+<li><p>Deploy hook: (Render propose de la générer ou de la changer automatiquement.)</p></li>
+<li><p>Dans la rubrique Environnement:</p></li>
+<li><p>SECRET_KEY: La variable que nous avons copiée depuis le fichier à la racine: .env</p></li>
+<li><p>Une fois ces valeurs renseignées, Render vous communique l’adresse à utiliser en production sur la page ou figure votre</p></li>
+</ul>
+<p>projet.</p>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="page5.html" class="btn btn-neutral float-left" title="Deploiement Docker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="page7.html" class="btn btn-neutral float-right" title="Déploiement CircleCi" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="page5.html" class="btn btn-neutral float-left" title="Docker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="page7.html" class="btn btn-neutral float-right" title="CircleCi" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

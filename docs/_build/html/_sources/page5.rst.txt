@@ -1,4 +1,4 @@
-Deploiement Docker
+Docker
 ==================
 Précédemment (page4) vous vous êtes enregistré sur dockehub, et avez installé docker en local.
 Préalablement les fichier Dockerfile et .dockerignore (étapes inutiles à ignorer) sont déjà créés et figurent dans le code.
@@ -17,10 +17,10 @@ Rappel: Changer la valeur `dns` de votre acompte Sentry.
 
 Docker Hub
 ----------
-Pour l'instant, votre application est disponible en local, mais pouvez la rendre publique.
-Pour rendre cette image publique,  il faut la publier sur Docker Hub, en lançant les commandes suivantes:
-``docker tag ocr-docker-build:latest YOUR_USERNAME/nom_application:latest`` (Crée un lien entre l'image créée et
+- Pour l'instant, votre application est disponible en local, mais pouvez la rendre publique.
+- Pour rendre cette image publique,  il faut la publier sur Docker Hub, en lançant les commandes suivantes:
+- ``docker tag ocr-docker-build:latest YOUR_USERNAME/nom_application:latest`` (Crée un lien entre l'image créée et
   l'image à envoyer.)
-Puis:
-``docker push YOUR_USERNAME/nom_application:latest``
-Voilà, l'image figure sur une 'Registry' sur Docker Hub.
+- Puis:
+- ``docker push YOUR_USERNAME/nom_application:latest``
+- Voilà, l'image figure sur une 'Registry' sur Docker Hub.
