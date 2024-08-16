@@ -43,19 +43,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 # Application definition
 
 INSTALLED_APPS = [
-    # 'oc_lettings_site.apps.OCLettingsSiteConfig',
+    """ Ajout apps profiles et settings. """
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'oc_lettings_site',
+    'oc_lettings_site',
     'profiles',
     'lettings',
     ]
 
 MIDDLEWARE = [
+    """ Ajout WhiteNoiseMiddleWare: gestion des fichiers statics avec django. """
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -140,7 +141,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
+""" whitenoise utilise staticfiles. """
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
