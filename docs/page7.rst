@@ -7,8 +7,8 @@ Création d'un compte sur CircleCi. (Comme précédemment avec Render, utiliser 
 - et en particulier les variables d'environnement:
 - DEBUG = False
 - DEPLOY_HOOK = (valeur générée et figurant dans Render/Deployhook)
-- DOCKER_HUB_PASSWORD = personal_password_hub (Le mien ou le vôtre)
-- DOCKER_HUB_USER_ID = personal_user_id (Le mien ou le vôtre)
+- DOCKER_HUB_PASSWORD = personal_password_hub (le vôtre)
+- DOCKER_HUB_USER_ID = personal_user_id (le vôtre)
 - SECRET_KEY = celui défini dans racine/.env
 - dsn = celui défini dans racine/.env
 
