@@ -15,6 +15,7 @@ from sentry_sdk import capture_message, capture_exception, set_tag
 # non finibus neque cursus id.
 
 def home(request):
+    """ Retourne la page d'index."""
     return render(request, 'lettings/home.html')
 
 
@@ -24,6 +25,7 @@ def home(request):
 # posuere cubilia curae; Cras eget scelerisque
 
 def index(request):
+    """ Retourne une liste de locations. """
     lettings_list = Letting.objects.all()
     context = {'lettings_list': lettings_list}
     return render(request, 'lettings/index.html', context)
