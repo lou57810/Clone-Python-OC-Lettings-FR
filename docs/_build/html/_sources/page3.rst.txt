@@ -10,6 +10,7 @@ Init Sentry:
 - Vous pouvez le DSN dans les références de votre projet avec [Project] > Settings > Client Keys (DSN).
 - Copie cette valeur dans .env (DSN="...."). Cette valeur sera liée dans votre fichier oc_lettings_site/settings.py.
 - .env non commité, `DSN` ne doit pas être diffusée avec git en production.)
+- ajout du code suivant dans oc_lettings_site/settings.py
 - sentry_sdk.init(dsn,
                 integrations=[DjangoIntegration()],
                 max_breadcrumbs=50,

@@ -23,7 +23,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="1. Déploiement:" href="page4.html" />
+    <link rel="next" title="Déploiement" href="page4.html" />
     <link rel="prev" title="Lancement de l’application en local." href="page2.html" /> 
 </head>
 
@@ -55,8 +55,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#init-sentry">Init Sentry:</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="page4.html">1. Déploiement:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page4.html">Déploiement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page5.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page6.html">Render:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page7.html">CircleCi</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">Clone-Python-OC-Lettings-FR</a></li>
 </ul>
 
@@ -98,6 +100,7 @@
 <li><p>Vous pouvez le DSN dans les références de votre projet avec [Project] &gt; Settings &gt; Client Keys (DSN).</p></li>
 <li><p>Copie cette valeur dans .env (DSN= »…. »). Cette valeur sera liée dans votre fichier oc_lettings_site/settings.py.</p></li>
 <li><p>.env non commité, <cite>DSN</cite> ne doit pas être diffusée avec git en production.)</p></li>
+<li><p>ajout du code suivant dans oc_lettings_site/settings.py</p></li>
 <li><dl class="simple">
 <dt>sentry_sdk.init(dsn,</dt><dd><p>integrations=[DjangoIntegration()],
 max_breadcrumbs=50,
@@ -128,7 +131,7 @@ from django.urls import path</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
         <a href="page2.html" class="btn btn-neutral float-left" title="Lancement de l’application en local." accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="page4.html" class="btn btn-neutral float-right" title="1. Déploiement:" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="page4.html" class="btn btn-neutral float-right" title="Déploiement" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
