@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.urls import path, include
 # from django.http import HttpResponse
-# from . import views
+from . import views
 from oc_lettings_site.views import index
 
 
@@ -11,4 +11,5 @@ urlpatterns = [
     path("lettings/", include("lettings.urls")),
     path("profiles/", include("profiles.urls")),
     path('admin/', admin.site.urls),
+    path('sentry-debug/', views.trigger_error, name='sentry_test'),
     ]
