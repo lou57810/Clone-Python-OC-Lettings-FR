@@ -23,6 +23,7 @@ def my_custom_page_not_found_view(*args, **kwargs):
 
 
 def index(request):
+    """ Retourne la page d'index."""
     profiles_list = Profile.objects.all()
     context = {'profiles_list': profiles_list}
     return render(request, 'profiles/index.html', context)
