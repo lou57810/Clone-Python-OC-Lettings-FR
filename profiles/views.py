@@ -1,7 +1,7 @@
 # import logging
 from django.shortcuts import render
 from .models import Profile
-from sentry_sdk import capture_exception, set_tag
+from sentry_sdk import  capture_message, capture_exception, set_tag
 
 # from django.http import HttpResponseNotFound
 # from sentry_sdk import capture_message
@@ -39,6 +39,7 @@ def profile(request, username):
     try:
         profile = Profile.objects.get(user__username=username)
     except Exception as e:
+        capture_message("Page not found Error 404!", level="error")
         set_tag("profile", f"L'utilisateur {request.user} a consulte un profil: {username} inexistant!")
         capture_exception(e)
         return render(request, 'error404.html')
