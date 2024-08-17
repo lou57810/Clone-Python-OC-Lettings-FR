@@ -35,4 +35,4 @@ def trigger_error(request):
     except ZeroDivisionError as e:
         sentry_sdk.capture_exception(e)
         return render(
-            request, 'error.html', {'error_message': str(e)}, status=500)
+            request, 'trigger_error.html', {'error_message': str(e)}, status=500)
