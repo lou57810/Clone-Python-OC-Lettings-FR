@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Letting
+import sentry_sdk
 from sentry_sdk import capture_message, capture_exception, set_tag
 # from django.http import Http404
 
@@ -15,7 +16,14 @@ from sentry_sdk import capture_message, capture_exception, set_tag
 # non finibus neque cursus id.
 
 def home(request):
-    """ Retourne la page d'index."""
+    """ home function for home page.
+
+        request : HttpRequest object.
+            The request sent by the client.
+
+        response: HttpResponse object
+        render home page.
+    """
     return render(request, 'lettings/home.html')
 
 
@@ -50,8 +58,9 @@ def letting(request, letting_id):
         letting = Letting.objects.get(id=letting_id)
     except Exception as e:
         set_tag("letting", f"L'utilisateur {request.user} a voulu consulter un id: {letting_id} inexistant!")
+        sentry_sdk.capture_exception(e)
         capture_exception(e)
-        return render(request, 'error404.html')
+        return render(request, 'error404.html', {'error_message': str(e)}, status=404)
     context = {
         'title': letting.title,
         'address': letting.address,

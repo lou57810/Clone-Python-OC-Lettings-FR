@@ -4,12 +4,20 @@ from django.shortcuts import render
 
 
 def index(request):
+    """index function for home page.
+
+        request : HttpRequest object.
+            The request sent by the client.
+
+        response: HttpResponse object
+        render home page.
+    """
     return render(request, 'lettings/home.html')
 
 
 def custom404(request, *args, **kwargs):
     capture_message("Page not found!", level="error")
-    return render(request, 'error404.html')
+    return render(request, 'error404.html', status=404)
 
 
 def custom500(request, *args, **kwargs):
@@ -19,17 +27,8 @@ def custom500(request, *args, **kwargs):
 
 def trigger_error(request):
     """
-    Déclenche une erreur de division par zéro pour tester
-    la capture d'exception par Sentry.
-
-    Args:
-        request (HttpRequest): L'objet HttpRequest
-        qui représente la requête HTTP.
-
-    Returns:
-        HttpResponse: L'objet HttpResponse qui représente
-        la réponse HTTP contenant la page d'erreur.
-
+    Crée une "ZeroDivisionError" pour tester
+    le rapport Sentry.
     """
     try:
         return 1 / 0
