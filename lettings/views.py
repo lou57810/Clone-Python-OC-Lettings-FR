@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from .models import Letting
-import sentry_sdk
+
 from sentry_sdk import capture_message, capture_exception, set_tag
-# from django.http import Http404
+from django.http import Http404
 
 
 # Create your views here.
@@ -14,29 +14,45 @@ from sentry_sdk import capture_message, capture_exception, set_tag
 # Aliquam vitae erat ac orci placerat luctus. Nullam elementum urna nisi,
 # pellentesque iaculis enim cursus in. Praesent volutpat porttitor magna,
 # non finibus neque cursus id.
-
+"""
 def home(request):
-    """ home function for home page.
+     home function for home page.
 
         request : HttpRequest object.
             The request sent by the client.
 
         response: HttpResponse object
         render home page.
-    """
+    
     return render(request, 'lettings/home.html')
-
+"""
 
 # Aenean leo magna, vestibulum et tincidunt fermentum, consectetur quis velit.
 # Sed non placerat massa. Integer est nunc, pulvinar a
 # tempor et, bibendum id arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
 # posuere cubilia curae; Cras eget scelerisque
 
-def index(request):
+def lettings_index(request):
+
+    """ Retourne la page d'index."""
+    current_url = request.build_absolute_uri()
+    print('current_url:', current_url)
+    # Vérifier si l'URL est alphanumérique et correspond à l'URL attendue
+    """if not current_url.isalnum() or current_url != 'http://127.0.0.1:8000/lettings/index/':
+        print('ERROR')
+        # return render(request, 'error404.html')
+
+    else:
+    """
     """ Retourne une liste de locations. """
-    lettings_list = Letting.objects.all()
-    context = {'lettings_list': lettings_list}
-    return render(request, 'lettings/index.html', context)
+    if current_url.isalnum() or current_url == 'http://127.0.0.1:8000/lettings/index/':
+        print('SUCCESS')
+        lettings_list = Letting.objects.all()
+        context = {'lettings_list': lettings_list}
+        return render(request, 'lettings/index.html', context)
+    else:
+        return render(request, 'error404.html')
+
 
 
 # Cras ultricies dignissim purus, vitae hendrerit ex varius non.
@@ -59,7 +75,6 @@ def letting(request, letting_id):
     except Exception as e:
         capture_message("Page not found Error 404!", level="error")
         set_tag("letting", f"L'utilisateur {request.user} a voulu consulter un id: {letting_id} inexistant!")
-        sentry_sdk.capture_exception(e)
         capture_exception(e)
         return render(request, 'error404.html', {'error_message': str(e)}, status=404)
     context = {

@@ -35,6 +35,7 @@ sentry_sdk.add_breadcrumb(category="logger", message="Program is starting! ", le
 SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
+print('debug:', os.getenv('DEBUG'))
 
 ALLOWED_HOSTS = ['*']
 
@@ -49,7 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'oc_lettings_site',
+    # 'oc_lettings_site',
     'profiles',
     'lettings',
     ]
@@ -77,7 +78,10 @@ STATICFILES_STORAGES = {
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        # 'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [BASE_DIR.joinpath('templates'),  # Ajout fichiers rep templates
+        ],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

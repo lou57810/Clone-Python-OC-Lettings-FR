@@ -1,7 +1,6 @@
-# import logging
 from django.shortcuts import render
 from .models import Profile
-from sentry_sdk import  capture_message, capture_exception, set_tag
+from sentry_sdk import capture_message, capture_exception, set_tag
 
 # from django.http import HttpResponseNotFound
 # from sentry_sdk import capture_message
@@ -22,7 +21,7 @@ def my_custom_page_not_found_view(*args, **kwargs):
 # def profiles_index(request):
 
 
-def index(request):
+def profiles_index(request):
     try:
         """ Retourne la page d'index."""
         profiles_list = Profile.objects.all()

@@ -3,8 +3,8 @@ from sentry_sdk import capture_message
 from django.shortcuts import render
 
 
-def index(request):
-    """index function for home page.
+def home(request):
+    """home function for home page.
 
         request : HttpRequest object.
             The request sent by the client.
@@ -12,7 +12,8 @@ def index(request):
         response: HttpResponse object
         render home page.
     """
-    return render(request, 'lettings/home.html')
+    # return render(request, 'lettings/home.html')
+    return render(request, 'home.html')
 
 
 def custom404(request, *args, **kwargs):
