@@ -57,6 +57,7 @@ def letting(request, letting_id):
     try:
         letting = Letting.objects.get(id=letting_id)
     except Exception as e:
+        capture_message("Page not found Error 404!", level="error")
         set_tag("letting", f"L'utilisateur {request.user} a voulu consulter un id: {letting_id} inexistant!")
         sentry_sdk.capture_exception(e)
         capture_exception(e)
