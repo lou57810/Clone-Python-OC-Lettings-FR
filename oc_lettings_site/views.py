@@ -16,12 +16,12 @@ def index(request):
 
 
 def custom404(request, *args, **kwargs):
-    capture_message("Page not found!", level="error")
+    capture_message("Page not found Error 404!", level="error")
     return render(request, 'error404.html', status=404)
 
 
 def custom500(request, *args, **kwargs):
-    capture_message("Error 500!", level="error")
+    capture_message("Page not found Error 500!", level="error")
     return render(request, 'error500.html', status=500)
 
 
