@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from . import views
-from oc_lettings_site.views import home # index
+from oc_lettings_site.views import home  # index
 
 
 """ Liste de modèles urls. A chaque requête HTTP, Django parcourt cette liste dans l'ordre

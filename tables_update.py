@@ -40,14 +40,17 @@ def data_exchange(src, dst):
         data = pd.read_sql_query(f"SELECT * FROM {src}", connection)
 
         name = src
+        """ Parse / underscore: oc_lettings_site_* => ['oc', 'lettings', 'site', '*'] """
         new = name.split('_')
+        """ keep last elt """
         new_name = new[-1]
+        """ data_csv/*.csv """
         csv = path_csv + f'{new_name}.csv'
 
-        # Transform to CSV
+        """ Transform to CSV """
         data.to_csv(csv, index=False)
 
-        # Transfer to existing table
+        """ Transfer to existing table """
         connection = sqlite3.connect(path_db)
         data = pd.read_csv(csv)
         data.to_sql(dst, connection, if_exists='replace', index=False)

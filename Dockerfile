@@ -1,16 +1,9 @@
 # base image
 FROM python:3.12
 
-# Maintenance dockerfile:
-# MAINTAINER lou57810 <lou57810@foo.com>	deprecated
 ENV PYTHONBUFFERED = 1
 # Eviter les fichiers .pyc dans les containers --> ralentissements
 ENV PYTHONDONTWRITEBYTECODE = 1
-
-# Installer les d�pendances syst�me n�cessaires
-# RUN apt-get update && \
-    # apt-get install -y build-essential libffi-dev libpq-dev libssl-dev && \
-    # apt-get clean
 
 RUN mkdir /app
 
@@ -24,14 +17,9 @@ RUN python manage.py collectstatic --noinput
  
 ADD oc-lettings-site.sqlite3 /app
 
-# volume:
-# 	- static: /static
-
 ENV SENTRY_DSN='https://4fe1df4c12e0ff56d4aec441e9a43f33@o4506869492940800.ingest.us.sentry.io/4507753280045056'
 ENV SENTRY_ENVIRONMENT=production
 
-
 # specify the port number the container should expose
 EXPOSE 8000:8000
-
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "oc_lettings_site.wsgi:application"]
