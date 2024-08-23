@@ -7,16 +7,19 @@ def lettings_index(request):
 
     """ Retourne la page d'index."""
     current_url = request.build_absolute_uri()
-    print('current_url:', current_url)
+    # print('current_url:', current_url)
     # Vérifier si l'URL est alphanumérique et correspond à l'URL attendue
 
-    """ Retourne une liste de locations. """
+    """ Retourne une liste de locations. 
     if current_url.isalnum() or current_url == 'http://127.0.0.1:8000/lettings/index/':
         lettings_list = Letting.objects.all()
         context = {'lettings_list': lettings_list}
         return render(request, 'lettings/index.html', context)
     else:
-        return render(request, 'error404.html')
+        return render(request, 'error404.html')"""
+    lettings_list = Letting.objects.all()
+    context = {'lettings_list': lettings_list}
+    return render(request, 'lettings/index.html', context)
 
 
 def letting(request, letting_id):
