@@ -2,16 +2,11 @@ from django.test import TestCase
 import pytest
 from django.urls import reverse
 from django.contrib.auth.models import User
-# from lettings.models import Address, Letting
 from profiles.models import Profile
 
 
-""" Test création d'une instance de profile models: """
-
-
-@pytest.mark.django_db  # Crée une database temporaire nulle en fin de test.
+@pytest.mark.django_db
 def test_profile_creation():
-    # Créer un utilisateur pour lier au profil
     user = User.objects.create_user(username='testuser', password='password123')
 
     # Créer un profil
