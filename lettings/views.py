@@ -26,8 +26,10 @@ def lettings_index(request):
 def letting(request, letting_id):
     try:
         letting = Letting.objects.get(id=letting_id)
+        set_tag("action", "consultation.letting")
+        capture_message(f"L'utilisateur {request.user} a consulté {letting.title}")
+
     except Exception as e:
-        capture_message("Page not found Error 404!", level="error")
         set_tag("letting", f"L'utilisateur {request.user} a voulu consulter un id: {letting_id} inexistant!")
         capture_exception(e)
         return render(request, 'error404.html', {'error_message': str(e)}, status=404)
@@ -35,5 +37,4 @@ def letting(request, letting_id):
         'title': letting.title,
         'address': letting.address,
     }
-    capture_message(f"L'utilisateur, {request.user} a consulte lettings {letting.title}")
     return render(request, 'lettings/letting.html', context)

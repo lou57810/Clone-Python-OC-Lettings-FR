@@ -43,9 +43,9 @@ def profiles_index(request):
 def profile(request, username):
     try:
         profile = Profile.objects.get(user__username=username)
+        set_tag("action", "consultation.profile")
+        capture_message(f"L'utilisateur {request.user} a consulté {profile.user.username}")
     except Exception as e:
-        capture_message("Page not found Error 404!", level="error")
-        set_tag("profile", f"L'utilisateur {request.user} a consulte un profil: {username} inexistant!")
         capture_exception(e)
         return render(request, 'error404.html')
 

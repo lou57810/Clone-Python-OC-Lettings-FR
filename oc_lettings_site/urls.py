@@ -8,6 +8,9 @@ from oc_lettings_site.views import home  # index
     et essaie de trouver une correspondance. """
 
 
+handler404 = "oc_lettings_site.views.custom404"
+handler500 = "oc_lettings_site.views.custom500"
+
 urlpatterns = [
     path('', home, name='home'),
     path("lettings/", include("lettings.urls")),

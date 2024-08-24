@@ -35,7 +35,8 @@ sentry_sdk.add_breadcrumb(category="logger", message="Program is starting! ", le
 SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
-print('debug:', os.getenv('DEBUG'))
+DEBUG = DEBUG.lower() in ('true', '1', 'yes', 'on')
+print('debug:', DEBUG)
 
 ALLOWED_HOSTS = ['*']
 

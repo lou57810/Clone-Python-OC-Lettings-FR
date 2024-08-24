@@ -22,7 +22,7 @@ def custom404(request, *args, **kwargs):
 
 
 def custom500(request, *args, **kwargs):
-    capture_message("Page not found Error 500!", level="error")
+    capture_message("Error 500!", level="error")
     return render(request, 'error500.html', status=500)
 
 
