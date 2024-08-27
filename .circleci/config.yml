@@ -1,8 +1,6 @@
-# Essai push git
 # CircleCI configuration file
 # description: An orb that display website
 version: 2.1
-
 # Orbs = reusable snippets of code that help automate repeated processes,
 # speed up project setup, and make it easy to integrate with third-party tools. 
 orbs:
