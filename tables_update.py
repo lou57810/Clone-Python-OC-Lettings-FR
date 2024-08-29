@@ -69,7 +69,7 @@ def drop_old_datas():
         connection.execute("DROP TABLE oc_lettings_site_profile")
         print("data dropped successfully")
     except Exception as e:
-        print(f"oc_lettings_site tables has been priviously destroyed!: {e}")
+        print(f"oc_lettings_site tables has been previously destroyed!: {e}")
     # close the connection
     connection.close()
 

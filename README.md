@@ -75,3 +75,28 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 
 - Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
 - Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
+
+### Git bash
+
+- Pour activer l'environnement virtuel: `source venv/Scripts/activate`
+
+
+### Déploiement
+
+Le déploiement avec Docker est asujetti à l'utilisation du fichier Dockerfile (à la racine),
+ainsi que la création d'un compte sur Docker Hub.
+Puis:
+- Installation de Docker Desktop
+- Construction d'une image: `docker build -t oc-lettings-site-build`
+- Affichage des containers: `docker ps -a`
+- Suppression d'un container: `docker rm id_container`
+- Suppression d'une image: `docker rmi id_container ou nom_container`
+- Affichage des images: `docker images`
+- Lancement du build en local: `docker run -d -p 8000:8000 clone-oc-lettings-site-build`
+- Démarrage du navigateur à l'adresse: `http://127.0.0.1:8000`
+- Tag de l'image: `docker tag oc-lettings-site-build:latest YOUR_USERNAME/oc-lettings-site-build/version1,0`
+
+Pour que l'application soit disponible sur Docker Hub il faut la pousser dans un Registry:
+Il faut se logger au préalable, votre username et votre mot de passe créé sur docker hub sera requis:
+- `docker login` (git bash: `winpty docker login`)
+- `docker push YOUR_USERNAME/oc-lettings-site-build:latest`

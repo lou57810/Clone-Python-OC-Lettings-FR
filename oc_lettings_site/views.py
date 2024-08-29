@@ -12,7 +12,6 @@ def home(request):
         response: HttpResponse object
         render home page.
     """
-    # return render(request, 'lettings/home.html')
     return render(request, 'home.html')
 
 
