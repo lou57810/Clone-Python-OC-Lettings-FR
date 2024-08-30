@@ -5,3 +5,4 @@ tables_update.py
 README.md
 pytest.ini
 .readthedocs.yaml
+htmlcov
