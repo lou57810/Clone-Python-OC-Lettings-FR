@@ -1,3 +1,7 @@
 .git
 docs
 tables_update.py
+.circleci
+README.md
+pytest.ini
+.readthedocs.yaml
