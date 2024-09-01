@@ -22,6 +22,7 @@ def profile(request, username):
         set_tag("action", "consultation.profile")
         capture_message(f"L'utilisateur {request.user} a consulté {profile.user.username}")
     except Exception as e:
+        set_tag("letting", f"L'utilisateur {request.user} a voulu consulter un id inexistant!")
         capture_exception(e)
         return render(request, 'error404.html')
 

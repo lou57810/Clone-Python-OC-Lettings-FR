@@ -4,8 +4,6 @@ from dotenv import load_dotenv
 """Ajouté pour le fonctionnement de Sentry sdk"""
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
-# from sentry_sdk.integrations.excepthook import ExcepthookIntegration
-# from sentry_sdk.integrations.arq import ArqIntegration
 import logging
 
 
