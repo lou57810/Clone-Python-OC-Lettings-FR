@@ -1,0 +1,4 @@
+[run]
+omit = tests/*, manage.py, asgi.py, wsgi.py, apps.py, oc_lettings_site/migrations/*, docs/*, tables_update.py
+
+
